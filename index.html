@@ -2,13 +2,21 @@
 
 <head>
   <title>Type Fast, Type Furious</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script>
+    $(document).ready(function(){
+        $("input").keypress(function(e){
+        if (e.which == 13)
+            $("h2").text("True");
+        });
+    });
+</script>
 </head>
 
 <body>
-  <p id='paragraph'>Hello world</p>
-  <form>
+  <p id="paragraph">Hello world</p>
     <input id="userInput" type="text" name="userInput" placeholder="Start Typing...">
-  </form>
+  <h2></h2>
 </body>
 
 </html>

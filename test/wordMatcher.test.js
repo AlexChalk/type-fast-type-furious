@@ -2,8 +2,8 @@ describe('wordMatcher', function(){
 
   beforeEach(function(){
     var fixture = "<div id='fixture'><p id='paragraph'>Hello world</p>" +
-    '<form><input id="userInput" type="text" name="userInput" placeholder="Start Typing..."></form>' +
-    "</div>";
+      '<form><input id="userInput" type="text" name="userInput" placeholder="Start Typing..."></form>' +
+      '<h2="output"></h2>';
 
     document.body.insertAdjacentHTML(
       'afterbegin',
@@ -20,6 +20,6 @@ describe('wordMatcher', function(){
 
   it('should display a form to take text input', function(){
     expect(document.getElementById('userInput').innerHTML).toBe('');
-  })
+  });
 
 });

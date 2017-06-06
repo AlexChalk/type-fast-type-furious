@@ -6,7 +6,7 @@ describe('Timer', function() {
   // });
 
   beforeEach(function() {
-    document.body.insertAdjacentHTML('afterbegin', '<button id="start">Start</button>')
+    document.body.insertAdjacentHTML('afterbegin', '<button id="start">Start</button>');
   });
   afterEach(function() {
     document.body.removeChild(document.getElementById('start'));

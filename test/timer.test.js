@@ -1,19 +1,22 @@
 describe('Timer', function() {
 
-  // inject the HTML fixture for the tests
-  // beforeEach(function() {
-  //   var fixture = '<div id="fixture"><input id="x" type="text">'
-  // });
-
   beforeEach(function() {
-    document.body.insertAdjacentHTML('afterbegin', '<button id="start">Start</button>');
+    document.body.insertAdjacentHTML('afterbegin', '<button id="start">Start</button><button id="start">Start</button>');
+    startListeners();
   });
   afterEach(function() {
     document.body.removeChild(document.getElementById('start'));
   });
 
-  it('should have a start button', function() {
+  it('has a start button that sets starting time', function() {
+    spyOn(Date, 'now').and.returnValue('perfect');
     document.getElementById('start').click();
-    expect(window.timer.startTime).toEqual(Date.getTime());
+    expect(timer.startTime).toEqual('perfect');
+  });
+
+  it('has a stop button that sets end time', function() {
+    spyOn(Date, 'now').and.returnValue('swish');
+    document.getElementById('stop').click();
+    expect(timer.stopTime).toEqual('swish');
   });
 });

@@ -5,12 +5,12 @@ $(document).ready(function(){
 
   $('#paragraph').text(this.RandomWordGenerator.randomise());
 
-  $("#userInput").keypress(function(e){
-    var textInput = $('#userInput').val();
-    var textExample = $('#paragraph').html();
+  $('#userInput').keypress(function(e){
+    var input = $('#userInput').val();
+    var paragraph = $('#paragraph').html();
 
-  if (e.which == 13 && textInput === textExample)
-      $("#result").text("True");
+  if (e.which == 13 && input === paragraph)
+      $('#result').text('True');
   });
 
 });

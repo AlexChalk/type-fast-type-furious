@@ -1,7 +1,7 @@
 describe('Timer', function() {
 
   beforeEach(function() {
-    document.body.insertAdjacentHTML('afterbegin', '<button id="start">Start</button><button id="start">Start</button>');
+    document.body.insertAdjacentHTML('afterbegin', '<button id="start">Start</button><button id="stop">Stop</button>');
     startListeners();
   });
   afterEach(function() {

@@ -3,22 +3,13 @@
 <head>
   <title>Type Fast, Type Furious</title>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="interactivity.js"></script>
 </head>
 
 <body>
   <p id="paragraph">Hello world</p>
     <input id="userInput" type="text" name="userInput" placeholder="Start Typing...">
-  <h2></h2>
-  <script>
-    $(document).ready(function(){
-        $("#userInput").keypress(function(e){
-          var textInput = $('#userInput').val();
-          var textExample = "Hello world";
-        if (e.which == 13 && textInput === textExample)
-            $("h2").text("True");
-        });
-    });
-</script>
+  <p id="result"></p>
 </body>
 
 </html>

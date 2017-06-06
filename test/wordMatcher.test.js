@@ -1,7 +1,7 @@
 describe('wordMatcher', function(){
 
   beforeEach(function(){
-    var fixture = "<div id='fixture'><p id='paragraph'>Hello world</p>" +
+    var fixture = '<div id="fixture"><p id="paragraph">Hello world</p>' +
       '<form><input id="userInput" type="text" name="userInput" placeholder="Start Typing..."></form>' +
       '<h2="output"></h2>';
 

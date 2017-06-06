@@ -15,7 +15,6 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
-      {pattern: 'index.html', included: false, served: false},
       'lib/*.js',
       'test/*.js'
     ],
@@ -23,6 +22,9 @@ module.exports = function(config) {
 
     // list of files to exclude
     exclude: [
+      'lib/calculator.js',
+      'lib/interactivity.js',
+      'test/calculator.test.js'
     ],
 
 

@@ -1,4 +1,4 @@
-describe('wordMatcher', function(){
+describe('index', function(){
 
   beforeEach(function(){
     var fixture = '<div id="fixture"><p id="paragraph">Hello world</p>' +

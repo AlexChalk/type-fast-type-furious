@@ -1,7 +1,4 @@
-var tk = require('timekeeper');
-var time = new Date(0);
-var time2 = new Date(1050);
-
+jasmine.clock().install();
 describe('Timer', function() {
 
   beforeEach(function() {
@@ -28,11 +25,11 @@ describe('Timer', function() {
   });
 
   it('displays total time when stopped', function() {
-    tk.freeze(time);
+    var baseTime = Date.now;
+    jasmine.clock().mockDate(baseTime);
     document.getElementById('start').click();
-    tk.travel(time2);
+    jasmine.clock().tick(50);
     document.getElementById('stop').click();
-    tk.reset();
-    expect(document.getElementById('total').innerHTML).toEqual(1000);
+    expect(document.getElementById('total').innerHTML).toEqual('50');
   });
 });

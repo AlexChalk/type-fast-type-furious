@@ -28,8 +28,8 @@ describe('Timer', function() {
     var baseTime = Date.now;
     jasmine.clock().mockDate(baseTime);
     document.getElementById('start').click();
-    jasmine.clock().tick(50);
+    jasmine.clock().tick(2100);
     document.getElementById('stop').click();
-    expect(document.getElementById('total').innerHTML).toEqual('50');
+    expect(document.getElementById('total').innerHTML).toEqual('2 seconds');
   });
 });

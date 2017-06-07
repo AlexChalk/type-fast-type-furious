@@ -33,16 +33,9 @@ describe('Timer', function() {
     jasmine.clock().uninstall();
   });
 
-  describe('live timer display', function() {
-    beforeEach(function(done){
-      document.getElementById('start').click();
-      setTimeout(function() {
-        done();
-      }, 2100);
-    });
-
-    it('displays total elapsed time', function(){
-      expect(document.getElementById('timer').innerHTML).toEqual('2 seconds');
-    });
+  it('calculates elapsed time', function(){
+    timer.startTime = Date.now - 1;
+    timer.calculateElapsedTime();
+    expect(document.getElementById('timer').innerHTML).toEqual('1 seconds');
   });
 });

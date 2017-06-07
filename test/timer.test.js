@@ -22,20 +22,30 @@ describe('Timer', function() {
     expect(timer.stopTime).toEqual('swish');
   });
 
-  it('displays total time when stopped', function() {
-    jasmine.clock().install();
-    var baseTime = Date.now;
-    jasmine.clock().mockDate(baseTime);
-    document.getElementById('start').click();
-    jasmine.clock().tick(2100);
-    document.getElementById('stop').click();
-    expect(document.getElementById('total').innerHTML).toEqual('2 seconds');
-    jasmine.clock().uninstall();
-  });
+  describe('timer display', function() {
+    beforeEach(function() {
+      jasmine.clock().install();
+      var baseTime = Date.now;
+      jasmine.clock().mockDate(baseTime);
+      document.getElementById('start').click();
+    });
+    afterEach(function() {
+      jasmine.clock().uninstall();
+    });
 
-  it('calculates elapsed time', function(){
-    timer.startTime = Date.now - 1;
-    timer.calculateElapsedTime();
-    expect(document.getElementById('timer').innerHTML).toEqual('1 seconds');
+    it('calculates elapsed time', function(){
+      jasmine.clock().tick(1100);
+      expect(document.getElementById('timer').innerHTML).toEqual('1 seconds');
+      jasmine.clock().tick(1100);
+      expect(document.getElementById('timer').innerHTML).toEqual('2 seconds');
+    });
+
+    it('displays total time when stopped', function() {
+      jasmine.clock().tick(2100);
+      document.getElementById('stop').click();
+      expect(document.getElementById('timer').innerHTML).toEqual('2.10 seconds');
+      jasmine.clock().tick(2100);
+      expect(document.getElementById('timer').innerHTML).toEqual('2.10 seconds');
+    });
   });
 });

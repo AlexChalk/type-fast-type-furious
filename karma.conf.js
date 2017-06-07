@@ -32,8 +32,9 @@ module.exports = function(config) {
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
-      '**/*.html'   : ['html2js'],
-      '**/*.json'   : ['json_fixtures']
+      'test/fixtures/*.html'   : ['html2js'],
+      '*.html'                 : ['html2js'],
+      '**/*.json'              : ['json_fixtures']
     },
 
     jsonFixturesPreprocessor: {

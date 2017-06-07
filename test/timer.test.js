@@ -2,8 +2,9 @@ jasmine.clock().install();
 describe('Timer', function() {
 
   beforeEach(function(){
-    fixture.base = 'test';
+    fixture.base = 'test/fixtures';
     fixture.load('/index.html');
+    startListeners();
   });
 
   afterEach(function(){

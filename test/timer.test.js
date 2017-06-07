@@ -33,13 +33,16 @@ describe('Timer', function() {
     jasmine.clock().uninstall();
   });
 
-  it('displays total elapsed time', function(){
-    jasmine.clock().install();
-    var baseTime = Date.now;
-    jasmine.clock().mockDate(baseTime);
-    document.getElementById('start').click();
-    jasmine.clock().tick(5500);
-    expect(document.getElementById('timer').innerHTML).toEqual('5 seconds');
-    jasmine.clock().uninstall();
+  describe('live timer display', function() {
+    beforeEach(function(done){
+      document.getElementById('start').click();
+      setTimeout(function() {
+        done();
+      }, 2100);
+    });
+
+    it('displays total elapsed time', function(){
+      expect(document.getElementById('timer').innerHTML).toEqual('2 seconds');
+    });
   });
 });

@@ -10,16 +10,15 @@ $(document).ready(function(){
     var paragraph = $('#paragraph').html();
     var words = paragraph.split(' ');
     var typedwords = input.split(' ');
+    var completedWords = [];
 
     if (e.which == 32) {
       typedwords.forEach(function(typedword, index) {
         if (typedword === words[index]) {
-          console.log(typedword);
-          console.log(words[index]);
-          $('#paragraph').css('color', 'green')
+          completedWords.push(typedword)
         }
       });
-        $('#result').text('True');
+      $("#result").text(completedWords.join(" ")).css("color","green")
     }
 
   });

@@ -3,24 +3,25 @@ $(document).ready(function(){
 
   this.RandomWordGenerator = new RandomWordGenerator();
 
-  $('#paragraph').text(this.RandomWordGenerator.randomise());
+  var wordsToType = this.RandomWordGenerator.randomise().split(' ');
+  wordsToType.forEach(function(word) {
+    $('#paragraph').append('<span ' + 'id="' + word + '">' + word + ' </span>');
+  });
+
 
   $('#userInput').keypress(function(e){
     var input = $('#userInput').val();
-    var paragraph = $('#paragraph').html();
-    var words = paragraph.split(' ');
+    var paragraph = wordsToType;
     var typedwords = input.split(' ');
     var completedWords = [];
 
     if (e.which == 32) {
       typedwords.forEach(function(typedword, index) {
-        if (typedword === words[index]) {
-          completedWords.push(typedword)
+        if (typedword === paragraph[index]) {
+          $('#' + typedword).css('color','green');
+          completedWords.push(typedword);
         }
       });
-      $("#result").text(completedWords.join(" ")).css("color","green")
     }
-
   });
-
 });

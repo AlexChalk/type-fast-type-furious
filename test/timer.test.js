@@ -39,6 +39,7 @@ describe('Timer', function() {
     jasmine.clock().mockDate(baseTime);
     document.getElementById('start').click();
     jasmine.clock().tick(5500);
-    expect.document.getElementById('timer').innerHTML.toEqual('5 seconds');
+    expect(document.getElementById('timer').innerHTML).toEqual('5 seconds');
+    jasmine.clock().uninstall();
   });
 });

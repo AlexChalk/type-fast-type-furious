@@ -1,15 +1,16 @@
 jasmine.clock().install();
 describe('Timer', function() {
 
-  beforeEach(function() {
-    document.body.insertAdjacentHTML('afterbegin',
-      '<button id="start">Start</button>' +
-      '<button id="stop">Stop</button>' +
-      'Total: <span id="total"></span>');
-    startListeners();
+  beforeEach(function(){
+      fixture.setBase('.');
   });
-  afterEach(function() {
-    document.body.removeChild(document.getElementById('start'));
+
+  beforeEach(function(){
+    this.result = fixture.load('index.html');
+  });
+
+  afterEach(function(){
+    fixture.cleanup();
   });
 
   it('has a start button that sets starting time', function() {

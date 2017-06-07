@@ -1,20 +1,17 @@
 describe('Calculator', function() {
 
   // inject the HTML fixture for the tests
-  beforeEach(function() {
-    var fixture = '<div id="fixture"><input id="x" type="text">' +
-      '<input id="y" type="text">' +
-      '<input id="add" type="button" value="Add Numbers">' +
-      'Result: <span id="result" /></div>';
+  before(function() {
+    fixture.setBase('index.html');
+  });
 
-    document.body.insertAdjacentHTML(
-      'afterbegin',
-      fixture);
+  beforeEach(function() {
+    this.result = fixture.load('index.html');
   });
 
   // remove the html fixture from the DOM
   afterEach(function() {
-    document.body.removeChild(document.getElementById('fixture'));
+    fixture.cleanup();
   });
 
   // call the init function of calculator to register DOM elements

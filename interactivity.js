@@ -8,9 +8,20 @@ $(document).ready(function(){
   $('#userInput').keypress(function(e){
     var input = $('#userInput').val();
     var paragraph = $('#paragraph').html();
+    var words = paragraph.split(' ');
+    var typedwords = input.split(' ');
 
-  if (e.which == 13 && input === paragraph)
-      $('#result').text('True');
+    if (e.which == 32) {
+      typedwords.forEach(function(typedword, index) {
+        if (typedword === words[index]) {
+          console.log(typedword);
+          console.log(words[index]);
+          $('#paragraph').css('color', 'green')
+        }
+      });
+        $('#result').text('True');
+    }
+
   });
 
 });

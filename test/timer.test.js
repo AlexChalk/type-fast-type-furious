@@ -1,4 +1,3 @@
-jasmine.clock().install();
 describe('Timer', function() {
 
   beforeEach(function(){
@@ -24,11 +23,22 @@ describe('Timer', function() {
   });
 
   it('displays total time when stopped', function() {
+    jasmine.clock().install();
     var baseTime = Date.now;
     jasmine.clock().mockDate(baseTime);
     document.getElementById('start').click();
     jasmine.clock().tick(2100);
     document.getElementById('stop').click();
     expect(document.getElementById('total').innerHTML).toEqual('2 seconds');
+    jasmine.clock().uninstall();
+  });
+
+  it('displays total elapsed time', function(){
+    jasmine.clock().install();
+    var baseTime = Date.now;
+    jasmine.clock().mockDate(baseTime);
+    document.getElementById('start').click();
+    jasmine.clock().tick(5500);
+    expect.document.getElementById('timer').innerHTML.toEqual('5 seconds');
   });
 });

@@ -23,12 +23,14 @@ describe('Timer', function() {
   });
 
   describe('timer display', function() {
+
     beforeEach(function() {
       jasmine.clock().install();
       var baseTime = Date.now;
       jasmine.clock().mockDate(baseTime);
-      $('#userInput').keypress(function(){});
+      document.getElementById('start').click();
     });
+
     afterEach(function() {
       jasmine.clock().uninstall();
     });

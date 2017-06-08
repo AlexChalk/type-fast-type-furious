@@ -6,10 +6,8 @@ $(document).ready(function(){
   var quote = xhr.response.slice(2,-2);
   var wordsToType = quote.split(' ');
 
-  this.RandomWordGenerator = new RandomWordGenerator();
-
-  wordsToType.forEach(function(word) {
-    $('#paragraph').append('<span ' + 'id="' + word + '">' + word + ' </span>');
+  wordsToType.forEach(function(word, index) {
+    $('#paragraph').append('<span ' + 'id="' + index + '">' + word + ' </span>');
   });
 
   $('#userInput').keypress(function(e){
@@ -17,12 +15,14 @@ $(document).ready(function(){
     var paragraph = wordsToType;
     var typedwords = input.split(' ');
     var completedWords = [];
+    var counter = 0;
 
     if (e.which == 32) {
       typedwords.forEach(function(typedword, index) {
         if (typedword === paragraph[index]) {
-          $('#' + typedword).css('color','green');
+          $('#' + index).css('color','green');
           completedWords.push(typedword);
+          counter++;
         }
       });
     }

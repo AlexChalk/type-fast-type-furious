@@ -13,7 +13,12 @@
     "karma-chrome-launcher": "^0.1.7",
     "karma-jasmine": "^0.3.8",
     "karma-jquery": "^0.2.0",
-    "karma-phantomjs-launcher": "^1.0.4"
+    "karma-fixture": "^0.2.6",
+    "karma-html2js-preprocessor": "^1.1.0",
+    "karma-json-fixtures-preprocessor": "0.0.6",
+    "karma-phantomjs-launcher": "^1.0.4",
+    "requirejs": "^2.3.3",
+    "timekeeper": "^1.0.0"
   },
   "dependencies": {}
 }

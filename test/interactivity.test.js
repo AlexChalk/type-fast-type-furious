@@ -23,7 +23,18 @@ describe('Interactive behaviour', function() {
   it('changes the colour of words that have been typed', function() {
     var words = ['test','words'];
     displayWords(words);
-    //type('test ');
+    var typeSpaceKey = document.createEvent('KeyboardEvent');
+    typeSpaceKey.initKeyEvent("keypress",       // typeArg,
+                   true,             // canBubbleArg,
+                   true,             // cancelableArg,
+                   null,             // viewArg,  Specifies UIEvent.view. This value may be null.
+                   false,            // ctrlKeyArg,
+                   false,            // altKeyArg,
+                   false,            // shiftKeyArg,
+                   false,            // metaKeyArg,
+                    32,               // keyCodeArg,                                                      
+                    0))
+    document.getElementById('input').dispatchEvent(typeSpaceKey);
     console.log(document.getComputedStyle('0').getPropertyValue('color'));
     expect(document.getComputedStyle('0').getPropertyValue('color')).toEqual('green');
 

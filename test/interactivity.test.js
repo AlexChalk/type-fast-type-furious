@@ -20,23 +20,24 @@ describe('Interactive behaviour', function() {
     expect(document.getElementById('paragraph').innerHTML).toEqual('<span id="0">test </span><span id="1">words </span>');
   });
 
-  it('changes the colour of words that have been typed', function() {
+  it('markWordAsTyped changes the colour of words', function() {
     var words = ['test','words'];
     displayWords(words);
-    var typeSpaceKey = document.createEvent('KeyboardEvent');
-    typeSpaceKey.initKeyEvent("keypress",       // typeArg,
-                   true,             // canBubbleArg,
-                   true,             // cancelableArg,
-                   null,             // viewArg,  Specifies UIEvent.view. This value may be null.
-                   false,            // ctrlKeyArg,
-                   false,            // altKeyArg,
-                   false,            // shiftKeyArg,
-                   false,            // metaKeyArg,
-                    32,               // keyCodeArg,                                                      
-                    0))
-    document.getElementById('input').dispatchEvent(typeSpaceKey);
-    console.log(document.getComputedStyle('0').getPropertyValue('color'));
-    expect(document.getComputedStyle('0').getPropertyValue('color')).toEqual('green');
+    markWordAsTyped(words, 0);
+    expect(document.getElementById('0').style.color).toEqual('green');
+  });
 
+  it('markWordAsTyped adds word to completedWords array', function() {
+    var words = ['test','words'];
+    displayWords(words);
+    markWordAsTyped(words, 0);
+    expect(completedWords).toContain('test');
+  });
+  it('assessWords iterates over typedWords array', function() {
+    var words = ['test','words'];
+    displayWords(words);
+    assessWords(words);
+    expect(completedWords).toContain('test');
+    expect(completedWords).toContain('words');
   });
 });

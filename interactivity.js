@@ -1,13 +1,9 @@
 $(document).ready(function(){
   'use strict';
   var xhr = new XMLHttpRequest();
-  xhr.open('GET', 'http://ron-swanson-quotes.herokuapp.com/v2/quotes', false);
-  xhr.send();
-  var wordsToType = xhr.response.slice(2,-2).split(' ');
+  var wordsToType = formatXHRQuoteToArray(xhr.grabARonSwansonQuote());
 
-  wordsToType.forEach(function(word, index) {
-    $('#paragraph').append('<span ' + 'id="' + index + '">' + word + ' </span>');
-  });
+  displayWords(wordsToType);
 
   $('#userInput').keypress(function(e){
     var input = $('#userInput').val();

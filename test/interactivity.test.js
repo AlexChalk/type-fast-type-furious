@@ -3,18 +3,29 @@ describe('Interactive behaviour', function() {
   beforeEach(function(){
     fixture.base = 'test/fixtures';
     fixture.load('/index.html');
-//    startListeners();
   });
 
   afterEach(function(){
     fixture.cleanup();
   });
 
-  it('loads some text to type', function() {
-    var xhr = new XMLHttpRequest;
-    spyOn(xhr, 'open'); spyOn(xhr, 'send');
-    xhr.response = "[\"test string\"]";
-    console.log(xhr.response);
-    expect(xhr.grabARonSwansonQuote()).toEqual(['test', 'string']);
+  it('formats strings from API response', function() {
+    var response =  "[\"test string\"]";
+    expect(formatXHRQuoteToArray(response)).toEqual(['test', 'string']);
+  });
+
+  it('creates html span tags with ids for each word', function() {
+    var words = ['test','words'];
+    displayWords(words);
+    expect(document.getElementById('paragraph').innerHTML).toEqual('<span id="0">test </span><span id="1">words </span>');
+  });
+
+  it('changes the colour of words that have been typed', function() {
+    var words = ['test','words'];
+    displayWords(words);
+    //type('test ');
+    console.log(document.getComputedStyle('0').getPropertyValue('color'));
+    expect(document.getComputedStyle('0').getPropertyValue('color')).toEqual('green');
+
   });
 });

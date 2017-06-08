@@ -27,7 +27,7 @@ describe('Timer', function() {
       jasmine.clock().install();
       var baseTime = Date.now;
       jasmine.clock().mockDate(baseTime);
-      document.getElementById('start').click();
+      $('#userInput').keypress(function(){});
     });
     afterEach(function() {
       jasmine.clock().uninstall();

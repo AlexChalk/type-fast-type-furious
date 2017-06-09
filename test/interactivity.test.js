@@ -42,6 +42,15 @@ describe('Interactive behaviour', function() {
       expect(assessWord('test','test')).toBe(true);
       expect(assessWord('test','stetst')).toBe(false);
     });
+    it('assessWord is called with correct words if keypress is space', function() {
+      assessWord = jasmine.createSpy('assessWord');
+//      spyOn(window, 'assessWord');
+      var userInput = document.getElementById('userInput');
+      userInput.value = 'test';
+      evaluateKeypress(32, words, completedWords, userInput);
+      expect(assessWord).toHaveBeenCalledWith('test', 'test');
+    });
+
   });
 
 });

@@ -2,22 +2,15 @@ $(document).ready(function(){
   'use strict';
   var xhr = new XMLHttpRequest();
   var wordsToType = formatXHRQuoteToArray(xhr.grabARonSwansonQuote());
+  var completedWords = []
 
   displayWords(wordsToType);
 
-  $('#userInput').keypress(function(e){
-    var input = $('#userInput').val();
-    var paragraph = wordsToType;
-    var typedwords = input.split(' ');
-    var completedWords = [];
+  document.getElementById('userInput').addEventListener('keypress', function(e){
+    evaluateKeypress(e.which, wordsToType, completedWords, userInput);
+  });
 
-    if (e.which == 32) {
-      typedwords.forEach(function(typedword, index) {
-        if (typedword === paragraph[index]) {
-          $('#' + index).css('color','green');
-          completedWords.push(typedword);
-        }
-      });
-    }
+  document.getElementById('userInput').addEventListener('input', function(){
+    removeInitialWhitespace(userInput);
   });
 });

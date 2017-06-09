@@ -44,6 +44,11 @@ describe('Timer', function() {
       jasmine.clock().tick(2100);
       stopTimer();
       expect(document.getElementById('timer').innerHTML).toEqual('2.10 seconds');
+    });
+
+    it('does not advance time after being stopped', function() {
+      jasmine.clock().tick(2100);
+      stopTimer();
       jasmine.clock().tick(2100);
       expect(document.getElementById('timer').innerHTML).toEqual('2.10 seconds');
     });

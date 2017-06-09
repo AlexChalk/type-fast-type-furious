@@ -16,16 +16,17 @@ describe('Interactive behaviour', function() {
 
   it('removeCurlyQuotes replaces curley quotes with straight quotes in a string', function() {
     expect('‘’“”‘’“”'.removeCurlyQuotes()).toEqual('\'\'""\'\'""');
-    expect('I like saying ‘No,’ it lowers their enthusiasm.'.removeCurlyQuotes()).toEqual('I like saying \'No,\' it lowers their enthusiasm.');
   });
 
   describe('type assessment', function() {
     var words;
     var completedWords;
+    var userInput;
     beforeEach(function() {
       words = ['test','words'];
       completedWords = [];
       displayWords(words);
+      userInput = document.getElementById('userInput');
     });
     afterEach(function() {
       completedWords = [];
@@ -55,14 +56,12 @@ describe('Interactive behaviour', function() {
     });
 
     it('input is cleared if keypress is space and word matches', function() {
-      var userInput = document.getElementById('userInput');
       userInput.value = 'test';
       evaluateKeypress(32, words, completedWords, userInput);
       expect(userInput.value).toEqual('');
     });
 
     it('input is not cleared if keypress is space and word does not match', function() {
-      var userInput = document.getElementById('userInput');
       userInput.value = 'wronglytypedtest';
       evaluateKeypress(32, words, completedWords, userInput);
       expect(userInput.value).toEqual('wronglytypedtest');

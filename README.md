@@ -13,20 +13,17 @@ click here to play [Type-Fast-Type-Furious](https://adc17.github.io/type-fast-ty
 
 
 ### Local Installation
-You will need Node and NPM installed on your local machine.
-
 In your terminal, run:
 
 `git clone git@github.com:adc17/type-fast-type-furious.git`<br>
 `cd type-fast-type-furious`<br>
-`npm install`<br>
 `open index.html`
 
 ### Testing
-To check that tests have been run successfully.
-
+You will need Node and NPM installed to run tests:
 In your terminal, run:
 
+`npm install -g karma`
 `./node_modules/karma/bin/karma start`
 
 ### Collaborators

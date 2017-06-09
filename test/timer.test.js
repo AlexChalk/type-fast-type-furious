@@ -3,23 +3,10 @@ describe('Timer', function() {
   beforeEach(function(){
     fixture.base = 'test/fixtures';
     fixture.load('/index.html');
-    startListeners();
   });
 
   afterEach(function(){
     fixture.cleanup();
-  });
-
-  it('has a start button that sets starting time', function() {
-    spyOn(Date, 'now').and.returnValue('perfect');
-    startTimer();
-    expect(timer.startTime).toEqual('perfect');
-  });
-
-  it('has a stop button that sets end time', function() {
-    spyOn(Date, 'now').and.returnValue('swish');
-    stopTimer();
-    expect(timer.stopTime).toEqual('swish');
   });
 
   describe('timer display', function() {
@@ -65,7 +52,7 @@ describe('Timer', function() {
       jasmine.clock().tick(4000);
       startTimer();
       stopTimer(4);
-      expect(document.getElementById('wpm').innerHTML).toEqual('60.00');
+      expect(document.getElementById('wpm').innerHTML).toEqual('12.00');
     });
   });
 });

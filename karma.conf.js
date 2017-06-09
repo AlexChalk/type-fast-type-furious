@@ -15,6 +15,7 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
+      'jquery-3.2.1.js',
       'lib/*.js',
       'test/*.js',
       '*.html'
@@ -23,9 +24,7 @@ module.exports = function(config) {
 
     // list of files to exclude
     exclude: [
-      'lib/calculator.js',
       'lib/interactivity.js',
-      'test/calculator.test.js'
     ],
 
 

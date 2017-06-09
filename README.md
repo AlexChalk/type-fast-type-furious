@@ -1,6 +1,6 @@
 # Type Fast Type Furious
 
-Welcome to Type-Fast-Type-Furious. This is a single page application built using JavaScript and jQuery that puts your typing speed to the test.
+Welcome to Type-Fast-Type-Furious. This is a single page application built using JavaScript that puts your typing speed to the test.
 
 ### How to play
 click here to play [Type-Fast-Type-Furious](https://adc17.github.io/type-fast-type-furious/)

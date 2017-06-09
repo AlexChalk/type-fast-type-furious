@@ -1,37 +1,68 @@
 # Type Fast Type Furious
 
+Welcome to Type-Fast-Type-Furious. This is a single page application built using JavaScript and jQuery that puts your typing speed to the test.
+
+### How to play
+click here to play [Type-Fast-Type-Furious](https://adc17.github.io/type-fast-type-furious/)
+
 ### Technologies
 
-* Language: Javascript
-* Framework: Nothing until we have a wicked front-end game sorted
-* Testing: Karma
+* Language: Javascript, Node.js
+* Testing: Jasmine and Karma
+* API: [Ron Swanson Quotes](http://ron-swanson-quotes.herokuapp.com/v2/quotes)
+
+
+### Local Installation
+You will need Node and NPM installed on your local machine.
+
+In your terminal, run:
+
+`git clone git@github.com:adc17/type-fast-type-furious.git`<br>
+`cd type-fast-type-furious`<br>
+`npm install`<br>
+`open index.html`
+
+### Testing
+To check that tests have been run successfully.
+
+In your terminal, run:
+
+`./node_modules/karma/bin/karma start`
+
+### Collaborators
+* [Jessica Barclay](https://github.com/JessicaBarclay)
+* [David Gray](https://github.com/DSeanGray)
+* [Miles Illsley](https://github.com/milesillsley)
 
 ### User Stories
 
 ```
-as a human that enjoys basking in the glory of my typing speed
-so that i can put my speed to the test
-i want a game that can tell me my WPM
-
-as a coder
-so that i can look at good code whilst basking in the glory of my typing speed
-i want the game to test me by providing clean, extensible, simple, excellent code to copy
-
-as a human that enjoys basking in the glory of my typing speed
-so that i can see what i'm meant to be typing
-i'd like the text i'm meant to be typing to be displayed
-
-as a human that enjoys basking in the glory of my typing speed
-so that i can have my speed assessed
-i'd like an area in which to type 
-
-as a human that enjoys basking in the glory of my typing speed
-so that i can gain satisfaction at not having typed junk
-i'd like to fail unless i type the text excerpt exactly as specified
-
-as a person that appreciates pretty design
-so that i can better appreciate my typing experience
-i would like to be tested on a site that looks lovely
-
+As a human that enjoys basking in the glory of my typing speed.
+So that i can put my speed to the test.
+I want a game that can tell me my WPM.
 ```
-
+```
+As a human that looks up to Ron Swanson.
+So that i can revel in his greatness.
+i want the game to test me by listing funny quotes for me to type.
+```
+```
+As a human that enjoys basking in the glory of my typing speed,
+so that i can see what i'm meant to be typing.
+I'd like the text i'm meant to be typing to be displayed.
+```
+```
+As a human that enjoys basking in the glory of my typing speed,
+so that i can have my speed assessed.
+I'd like an area in which to type.
+```
+```
+As a human that enjoys basking in the glory of my typing speed.
+so that i can gain satisfaction at not having typed junk.
+i'd like to fail unless i type the text excerpt exactly as specified.
+```
+```
+As a person that appreciates pretty design.
+So that i can better appreciate my typing experience.
+I would like to be tested on a site that looks lovely.
+```

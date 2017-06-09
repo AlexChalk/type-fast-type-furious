@@ -40,6 +40,12 @@ describe('Timer', function() {
     	expect(getKeyDownFired()).toEqual(true);
     });
 
+    it('stops the timer when the sentence is completed', function() {
+      startTimer();
+      stopTimer();
+      expect(getKeyDownFired()).toEqual(false);
+    })
+
     it('calculates elapsed time', function(){
       jasmine.clock().tick(1100);
       expect(document.getElementById('timer').innerHTML).toEqual('1 seconds');

@@ -24,7 +24,6 @@ module.exports = function(config) {
 
     // list of files to exclude
     exclude: [
-      'lib/RandomWordGenerator.js',
       'lib/interactivity.js',
     ],
 

@@ -12,13 +12,13 @@ describe('Timer', function() {
 
   it('has a start button that sets starting time', function() {
     spyOn(Date, 'now').and.returnValue('perfect');
-    document.getElementById('start').click();
+    startTimer();
     expect(timer.startTime).toEqual('perfect');
   });
 
   it('has a stop button that sets end time', function() {
     spyOn(Date, 'now').and.returnValue('swish');
-    document.getElementById('stop').click();
+    stopTimer();
     expect(timer.stopTime).toEqual('swish');
   });
 
@@ -28,7 +28,7 @@ describe('Timer', function() {
       jasmine.clock().install();
       var baseTime = Date.now;
       jasmine.clock().mockDate(baseTime);
-      document.getElementById('start').click();
+      startTimer();
     });
 
     afterEach(function() {
@@ -44,7 +44,7 @@ describe('Timer', function() {
       startTimer();
       stopTimer();
       expect(getKeyDownFired()).toEqual(false);
-    })
+    });
 
     it('calculates elapsed time', function(){
       jasmine.clock().tick(1100);
@@ -55,7 +55,7 @@ describe('Timer', function() {
 
     it('displays total time when stopped', function() {
       jasmine.clock().tick(2100);
-      document.getElementById('stop').click();
+      stopTimer();
       expect(document.getElementById('timer').innerHTML).toEqual('2.10 seconds');
       jasmine.clock().tick(2100);
       expect(document.getElementById('timer').innerHTML).toEqual('2.10 seconds');

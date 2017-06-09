@@ -24,7 +24,7 @@ $(document).ready(function(){
           completedWords.push(typedword);
         }
         if (completedWords.length === wordsToType.length) {
-          $("#stop").trigger("click");
+          stopTimer();
         }
       });
     }

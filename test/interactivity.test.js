@@ -10,18 +10,18 @@ describe('Interactive behaviour', function() {
   });
 
   it('formats strings from API response', function() {
-    var response =  "[\"test string\"]";
+    var response =  '["test string"]';
     expect(formatXHRQuoteToArray(response)).toEqual(['test', 'string']);
   });
 
-  it('curlyQuoteRemover replaces curley quotes with straight quotes in a string', function() {
+  it('removeCurlyQuotes replaces curley quotes with straight quotes in a string', function() {
     expect('‘’“”‘’“”'.removeCurlyQuotes()).toEqual('\'\'""\'\'""');
-    expect('I like saying ‘No,’ it lowers their enthusiasm.'.removeCurlyQuotes()).toEqual("I like saying 'No,' it lowers their enthusiasm.");
+    expect('I like saying ‘No,’ it lowers their enthusiasm.'.removeCurlyQuotes()).toEqual('I like saying \'No,\' it lowers their enthusiasm.');
   });
 
   describe('type assessment', function() {
-  var words;
-  var completedWords;
+    var words;
+    var completedWords;
     beforeEach(function() {
       words = ['test','words'];
       completedWords = [];

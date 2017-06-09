@@ -6,9 +6,23 @@ module.exports = {
     "node": true,
     "jasmine" :true
   },
-  "extends": "eslint:recommended",
+  "extends": ["eslint:recommended","plugin:jasmine/recommended"],
   "parserOptions": {
     "sourceType": "module"
+  },
+  "globals": {
+    "fixture": true,
+    "startTimer": true,
+    "stopTimer": true,
+    "getKeyDownFired": true,
+    "formatXHRQuoteToArray": true,
+    "displayWords": true,
+    "markWordAsTyped": true,
+    "markWordAsIncorrect": true,
+    "assessWord": true,
+    "evaluateKeypress": true,
+    "userInput": true,
+    "removeInitialWhitespace": true
   },
   "rules": {
     "indent": [

@@ -23,8 +23,8 @@ describe('Timer', function() {
     });
 
     it('starts timer upon keypress', function(){
-    	startTimer();
-    	expect(getKeyDownFired()).toEqual(true);
+      startTimer();
+      expect(getKeyDownFired()).toEqual(true);
     });
 
     it('stops the timer when the sentence is completed', function() {

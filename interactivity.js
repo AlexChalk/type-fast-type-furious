@@ -1,6 +1,7 @@
 $(document).ready(function(){
   'use strict';
   var xhr = new XMLHttpRequest();
+<<<<<<< HEAD
   var wordsToType = formatXHRQuoteToArray(xhr.grabARonSwansonQuote());
   var completedWords = []
 

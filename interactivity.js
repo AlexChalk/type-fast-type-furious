@@ -5,7 +5,6 @@ $(document).ready(function(){
   xhr.send();
   var quote = xhr.response.slice(2,-2);
   var wordsToType = quote.split(' ');
-  console.log(wordsToType);
 
   wordsToType.forEach(function(word, index) {
     $('#paragraph').append('<span ' + 'id="' + index + '">' + word + ' </span>');
@@ -24,7 +23,7 @@ $(document).ready(function(){
           completedWords.push(typedword);
         }
         if (completedWords.length === wordsToType.length) {
-          stopTimer();
+          stopTimer(completedWords.length);
         }
       });
     }

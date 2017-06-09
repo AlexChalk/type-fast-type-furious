@@ -35,6 +35,11 @@ describe('Timer', function() {
       jasmine.clock().uninstall();
     });
 
+    it('starts timer upon keypress', function(){
+    	uponKeyDown();
+    	expect(getKeyDownFired()).toEqual(true);
+    });
+
     it('calculates elapsed time', function(){
       jasmine.clock().tick(1100);
       expect(document.getElementById('timer').innerHTML).toEqual('1 seconds');

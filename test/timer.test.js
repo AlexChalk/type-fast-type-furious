@@ -60,5 +60,12 @@ describe('Timer', function() {
       jasmine.clock().tick(2100);
       expect(document.getElementById('timer').innerHTML).toEqual('2.10 seconds');
     });
+
+    it('displays wpm after completing sentence', function() {
+      jasmine.clock().tick(4000);
+      startTimer();
+      stopTimer(4);
+      expect(document.getElementById('wpm').innerHTML).toEqual('60.00');
+    });
   });
 });

@@ -36,7 +36,7 @@ describe('Timer', function() {
     });
 
     it('starts timer upon keypress', function(){
-    	uponKeyDown();
+    	startTimer();
     	expect(getKeyDownFired()).toEqual(true);
     });
 

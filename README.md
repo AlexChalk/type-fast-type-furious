@@ -2,24 +2,31 @@
 
 Welcome to Type-Fast-Type-Furious. This is a single page application built using JavaScript that puts your typing speed to the test.
 
-### How to play
-click here to play [Type-Fast-Type-Furious](https://adc17.github.io/type-fast-type-furious/)
+![type-fast-type-furious in action](http://i.imgur.com/Kjoy15I.png)
 
-### Technologies
+## How to play
+Click here to play [Type-Fast-Type-Furious](https://adc17.github.io/type-fast-type-furious/)
 
-* Language: Javascript, Node.js
+* Start typing: a countdown begins.
+* Type a word correctly: it turns green and the input box clears.
+* Type a word incorrectly: it turns red.
+* Finish typing the phrase: the timer stops and your WPM is displayed.
+
+![type-fast-type-furious complete](http://i.imgur.com/geg5ag9.png)
+
+## Technologies
+* Language: Javascript
 * Testing: Jasmine and Karma
 * API: [Ron Swanson Quotes](http://ron-swanson-quotes.herokuapp.com/v2/quotes)
 
-
-### Local Installation
+## Local Installation
 In your terminal, run:
 
 `git clone git@github.com:adc17/type-fast-type-furious.git`<br>
 `cd type-fast-type-furious`<br>
 `open index.html`
 
-### Testing
+## Testing
 You will need Node and NPM installed to run tests:
 In your terminal, run:
 
@@ -27,12 +34,13 @@ In your terminal, run:
 `npm install -g karma`<br>
 `karma start`
 
-### Collaborators
+## Collaborators
+* [Alexander Chalk](https://github.com/adc17)
 * [Jessica Barclay](https://github.com/JessicaBarclay)
 * [David Gray](https://github.com/DSeanGray)
 * [Miles Illsley](https://github.com/milesillsley)
 
-### User Stories
+## User Stories
 
 ```
 As a human that enjoys basking in the glory of my typing speed.
@@ -64,3 +72,6 @@ As a person that appreciates pretty design.
 So that i can better appreciate my typing experience.
 I would like to be tested on a site that looks lovely.
 ```
+## Other notes
+
+A one-week group challenge from the [Makers Academy](http://www.makersacademy.com) Bootcamp.

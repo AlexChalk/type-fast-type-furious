@@ -22,7 +22,8 @@ module.exports = {
     "assessWord": true,
     "evaluateKeypress": true,
     "userInput": true,
-    "removeInitialWhitespace": true
+    "removeInitialWhitespace": true,
+    "replaceUserInput": true
   },
   "rules": {
     "indent": [

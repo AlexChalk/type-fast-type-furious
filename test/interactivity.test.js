@@ -66,5 +66,11 @@ describe('Interactive behaviour', function() {
       evaluateKeypress(32, words, completedWords, userInput);
       expect(userInput.value).toEqual('wronglytypedtest');
     });
+
+    it('replaces input box with refresh page button when typing is complete', function() {
+      replaceUserInput();
+      expect(document.getElementById('input').innerHTML).toEqual('');
+    });
+
   });
 });

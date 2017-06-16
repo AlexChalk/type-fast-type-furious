@@ -2,7 +2,7 @@
 
 Welcome to Type-Fast-Type-Furious. This is a single page application built using JavaScript that puts your typing speed to the test.
 
-![type-fast-type-furious in action](http://i.imgur.com/Kjoy15I.png)
+![type-fast-type-furious in action](http://i.imgur.com/LSlXWYR.png)
 
 ## How to play
 Click here to play [Type-Fast-Type-Furious](https://adc17.github.io/type-fast-type-furious/)
@@ -12,7 +12,7 @@ Click here to play [Type-Fast-Type-Furious](https://adc17.github.io/type-fast-ty
 * Type a word incorrectly: it turns red.
 * Finish typing the phrase: the timer stops and your WPM is displayed.
 
-![type-fast-type-furious complete](http://i.imgur.com/geg5ag9.png)
+![type-fast-type-furious complete](http://i.imgur.com/dC2dkms.png)
 
 ## Technologies
 * Language: Javascript

@@ -14,7 +14,7 @@ describe('Interactive behaviour', function() {
     expect(formatXHRQuoteToArray(response)).toEqual(['test', 'string']);
   });
 
-  it('removeCurlyQuotes replaces curley quotes with straight quotes in a string', function() {
+  it('removeCurlyQuotes replaces curly quotes with straight quotes in a string', function() {
     expect('‘’“”‘’“”'.removeCurlyQuotes()).toEqual('\'\'""\'\'""');
   });
 
